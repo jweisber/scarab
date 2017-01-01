@@ -1,0 +1,132 @@
+{{ partial "header.html" . }}
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Row 1: Content -->
+    <div class="row">
+
+      <div class="col-md-8">
+        <h1>Blog</h1>
+        {{- range first 1 ((where .Data.Pages.ByDate "Section" "post").Reverse) }}
+          <a href="{{ .Permalink }}">{{ partial "post-summary" . }}</a>
+        {{ end }}
+        <div class="row">
+          <div class="col-xs-12">
+            <a href="/post/" class="more-link">MORE POSTS &#8811;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h1>Research</h1>
+        <ul class="list-unstyled">
+          {{- range first 5 ((where .Data.Pages.ByDate "Section" "publication").Reverse) }}
+          <li>
+            {{- if isset .Params "pdf" }}
+            <a href="{{ .Site.BaseURL }}/pdf/{{ .Params.pdf }}">{{ .Title }}</a>
+            {{- else }}
+            <a href="{{ .Params.puburl }}" target="_blank">{{ .Title }}</a>
+            {{- end }}
+            <div><em>{{ .Params.venue }}</em></div>
+          </li>
+          {{- end }}
+        </ul>
+        <a href="/publication/" class="more-link">MORE PAPERS &#8811;</a>
+      </div>
+
+    </div>
+
+
+    <!-- Row 2: Links -->
+    <div class="row">
+      <div class="col-md-6">
+        {{- if .Site.Params.linkstitle }}
+          <h1>{{ .Site.Params.linkstitle }}</h1>
+        {{- end }}
+        <ul class="list-unstyled list-hanging">
+        {{- range $item := .Site.Params.links }}
+          <li>
+            <a href="{{ index $item "url" }}">
+              {{ index $item "text" }}
+            </a>
+            {{- if index $item "description" }}
+              &ndash; {{ index $item "description" | safeHTML }}
+            {{- end }}
+          </li>
+        {{- end }}
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+      {{- if .Site.Params.morelinkstitle }}
+        <h1>{{ .Site.Params.morelinkstitle }}</h1>
+      {{- end }}
+        <ul class="list-unstyled list-hanging">
+        {{- range $item := .Site.Params.morelinks }}
+          <li>
+            <a href="{{ index $item "url" }}">
+              {{ index $item "text" }}
+            </a>
+            {{- if index $item "description" }}
+              &ndash; {{ index $item "description" | safeHTML }}
+            {{- end }}
+          </li>
+        {{- end }}
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Row #3: About -->
+    <div class="row">
+
+      <div class="col-md-4">
+        <h1><b>About</b></h1>
+        <p>
+          {{ .Site.Params.about }}
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <h2>&nbsp;</h2>
+        <ul class="fa-ul">
+          {{- if .Site.Params.address }}
+          <li><i class="fa-li fa fa-university"></i>
+            {{ .Site.Params.address }}
+          </li>
+          {{- end }}
+          {{- if .Site.Params.email }}
+          <li><i class="fa-li fa fa-envelope"></i>
+            <a href="mailto:{{ .Site.Params.email }}">
+              {{ .Site.Params.email }}
+            </a>
+          </li>
+          {{- end }}
+          {{- if .Site.Params.github }}
+          <li><i class="fa-li fa fa-github"></i>
+            <a href="http://www.github.com/{{ .Site.Params.github }}">
+              On GitHub
+            </a>
+          </li>
+          {{- end }}
+          {{- if .Site.Params.twitter }}
+          <li><i class="fa-li fa fa-twitter"></i>
+            <a href="http://www.twitter.com/{{ .Site.Params.twitter }}">
+              @{{ .Site.Params.twitter }}
+            </a>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <img src="{{ .Site.Params.avatar }}" class="img-circle">
+      </div>
+
+    </div>
+
+  </div>
+
+{{ partial "footer.html" . }}

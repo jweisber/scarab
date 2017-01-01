@@ -1,0 +1,25 @@
+{{ partial "header.html" . }}
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Row -->
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+
+        <h2>{{ .Title }}</h1>
+        <p>
+          <em>{{ .Date.Format "Mon, Jan 2, 2006" }}</em>
+        </p>
+        <p>
+          {{ .Content }}
+        </p>
+
+        <div>
+          <a href="{{ .Site.BaseURL }}"><i class="fa fa-arrow-left"></i> Home</a>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+{{ partial "footer.html" . }}

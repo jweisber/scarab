@@ -1,0 +1,41 @@
+{{ partial "header.html" . }}
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Row -->
+    <div class="row">
+      <div class="col-md-3 textright">
+        <h1 class="post-title">&nbsp;</h1>
+        <p>
+          <em>{{ .Date.Format "Mon, Jan 2, 2006" }}</em>
+        </p>
+        {{ if isset $.Params "tags" }}
+        {{ $tagsLen := len $.Params.tags }}
+        {{ if gt $tagsLen 0 }}
+        <p class="post-tags floatright">
+          {{ range $k, $v := $.Params.tags }}
+          <a class="post-tag" href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a>
+          {{ if lt $k (sub $tagsLen 1) }} &bull; {{ if eq 0 $k }} {{ end}} {{ end }}
+          {{ end }}
+        </p>
+        {{ end }}
+        {{ end }}
+      </div>
+      <div class="col-md-7 blog-post">
+
+        <h1 class="post-title">{{ .Title }}</h1>
+        <p>
+          {{ .Content }}
+
+          &nbsp;
+        </p>
+
+        <div>
+          <a href="{{ .Site.BaseURL }}"><i class="fa fa-arrow-left"></i> Home</a>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+{{ partial "footer.html" . }}
