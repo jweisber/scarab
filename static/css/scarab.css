@@ -98,6 +98,7 @@ h5, h6 {
 .epitaph {
   margin-top: 1em;
   font-style: italic;
+  padding-bottom: 1.35em;
 }
 
 code {
