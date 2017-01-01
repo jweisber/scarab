@@ -25,7 +25,6 @@ h5, h6, p , a, li, blockquote, div {
 
 h1.post-title {
   font-size: 1.8em;
-  font-weight: bold;
 }
 
 body {
@@ -114,11 +113,6 @@ pre code {
   font-size: .85em;
   font-style: italic;
 }
-
-.textright {
-  text-align: right;
-}
-
 
 .navbar-default {
   background-color: #3F3250;

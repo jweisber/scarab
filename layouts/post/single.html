@@ -5,22 +5,22 @@
 
     <!-- Row -->
     <div class="row">
-      <div class="col-md-3 hidden-sm hidden-xs textright">
+      <div class="col-md-3 hidden-sm hidden-xs text-right">
         <h1 class="post-title">&nbsp;</h1>
         <p>
-          <em>{{ .Date.Format "Mon, Jan 2, 2006" }}</em>
-        </p>
-        {{ if isset $.Params "tags" }}
-        {{ $tagsLen := len $.Params.tags }}
-        {{ if gt $tagsLen 0 }}
-        <p class="post-tags floatright">
-          {{ range $k, $v := $.Params.tags }}
-          <a class="post-tag" href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a>
-          {{ if lt $k (sub $tagsLen 1) }} &bull; {{ if eq 0 $k }} {{ end}} {{ end }}
+          <em>{{ .Date.Format "Mon, Jan 2, 2006" }}</em><br />
+          {{ if isset $.Params "tags" }}
+          {{ $tagsLen := len $.Params.tags }}
+          {{ if gt $tagsLen 0 }}
+          <span class="post-tags">
+            {{ range $k, $v := $.Params.tags }}
+            <a class="post-tag" href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a>
+            {{ if lt $k (sub $tagsLen 1) }} &bull; {{ if eq 0 $k }} {{ end}} {{ end }}
+            {{ end }}
+          </span>
+          {{ end }}
           {{ end }}
         </p>
-        {{ end }}
-        {{ end }}
       </div>
 
       <div class="col-md-7 blog-post">
@@ -43,7 +43,7 @@
           {{ end }}
           {{ end }}
         </div>
-        
+
         <p>
           {{ .Content }}
 
