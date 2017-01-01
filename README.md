@@ -10,4 +10,3 @@ To see an example in action [go here](https://jweisber.github.io/).
 - Add an example site
 - Add a setup tutorial
 - Improve configurability
-- Improve layout for small screens
