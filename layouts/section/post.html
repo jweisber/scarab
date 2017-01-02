@@ -4,7 +4,12 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-6 col-md-offset-4 text-right">
+      <div class="col-md-6 col-md-offset-4 hidden-xs hidden-sm">
+        <p class="epitaph">
+          {{ .Site.Params.blogepitaph | safeHTML }}
+        </p>
+      </div>
+      <div class="col-md-6 col-md-offset-4 hidden-md hidden-lg text-right">
         <p class="epitaph">
           {{ .Site.Params.blogepitaph | safeHTML }}
         </p>
@@ -18,7 +23,9 @@
       <div class="col-md-10 col-md-offset-1">
 
         {{- range first 10 .Data.Pages }}
-          <a href="{{ .Permalink }}">{{ partial "post-summary" . }}</a>
+        <div class="section-item">
+          <a href="{{ .Permalink }}">{{ partial "post-summary" (dict "context" . "leftcols" "4" "rightcols" "7") }}</a>
+        </div>
         {{- end }}
 
         <div>

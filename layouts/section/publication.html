@@ -4,7 +4,12 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-6 col-md-offset-4 text-right">
+      <div class="col-md-6 col-md-offset-3 hidden-xs hidden-sm">
+        <p class="epitaph">
+          {{ .Site.Params.researchepitaph | safeHTML }}
+        </p>
+      </div>
+      <div class="col-md-6 col-md-offset-4 hidden-md hidden-lg text-right">
         <p class="epitaph">
           {{ .Site.Params.researchepitaph | safeHTML }}
         </p>
@@ -16,9 +21,13 @@
       <div class="col-md-10 col-md-offset-1">
       </div>
       <div class="col-md-10 col-md-offset-1">
+
         {{- range .Data.Pages }}
+        <div class="section-item">
           <a href="{{ .Permalink }}">{{ partial "publication-summary" . }}</a>
+        </div>
         {{- end }}
+        
         <div>
           <a href="{{ .Site.BaseURL }}"><i class="fa fa-arrow-left"></i> Home</a>
         </div>

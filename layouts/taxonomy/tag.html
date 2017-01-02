@@ -1,35 +1,31 @@
 {{ partial "header.html" . }}
 
-  <!-- Page Content -->
   <div class="container">
 
     <div class="row">
-      <div class="col-md-6 col-md-offset-4 hidden-xs hidden-sm">
-        <p class="epitaph">
-          {{ .Site.Params.blogepitaph | safeHTML }}
-        </p>
-      </div>
-      <div class="col-md-6 col-md-offset-4 hidden-md hidden-lg text-right">
+      <div class="col-md-6 col-md-offset-4">
         <p class="epitaph">
           {{ .Site.Params.blogepitaph | safeHTML }}
         </p>
       </div>
     </div>
 
-    <!-- Row -->
     <div class="row">
+
       <div class="col-md-10 col-md-offset-1">
+      </div>
 
+      <div class="col-md-10 col-md-offset-1">
         {{- range first 10 .Data.Pages }}
+        <div class="section-item">
           <a href="{{ .Permalink }}">{{ partial "post-summary" (dict "context" . "leftcols" "4" "rightcols" "7") }}</a>
+        </div>
         {{- end }}
-
         <div>
           <a href="{{ .Site.BaseURL }}"><i class="fa fa-arrow-left"></i> Home</a>
         </div>
-
       </div>
+      
     </div>
-    <!-- /.row -->
 
 {{ partial "footer.html" . }}

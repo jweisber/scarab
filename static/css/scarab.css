@@ -114,6 +114,14 @@ pre code {
   font-style: italic;
 }
 
+.post-date {
+  margin-bottom: .5em;
+}
+
+.section-item {
+  margin-bottom: .75em;
+}
+
 .navbar-default {
   background-color: #3F3250;
   border-color: #3F3250;

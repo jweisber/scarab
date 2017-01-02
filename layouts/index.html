@@ -9,7 +9,7 @@
       <div class="col-md-8">
         <h1>Blog</h1>
         {{- range first 1 ((where .Data.Pages.ByDate "Section" "post").Reverse) }}
-          <a href="{{ .Permalink }}">{{ partial "post-summary" . }}</a>
+          {{ partial "post-summary" (dict "context" . "leftcols" "3" "rightcols" "8") }}
         {{ end }}
         <div class="row">
           <div class="col-xs-12">
