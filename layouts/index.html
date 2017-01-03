@@ -40,44 +40,15 @@
 
     <!-- Row 2: Links -->
     <div class="row">
-      <div class="col-md-6">
-        {{- if .Site.Params.linkstitle }}
-          <h1>{{ .Site.Params.linkstitle }}</h1>
-        {{- end }}
-        <ul class="list-unstyled list-hanging">
-        {{- range $item := .Site.Params.links }}
-          <li>
-            <a href="{{ index $item "url" }}">
-              {{ index $item "text" }}
-            </a>
-            {{- if index $item "description" }}
-              &ndash; {{ index $item "description" | safeHTML }}
-            {{- end }}
-          </li>
-        {{- end }}
-        </ul>
+      {{- range $index, $page := where .Data.Pages "Type" "extras" }}
+      <div class="col-md-6 hanging-no-bullets">
+        <h1>{{ $page.Params.heading | markdownify }}</h1>
+        {{ $page.Content | markdownify }}
       </div>
-
-      <div class="col-md-6">
-      {{- if .Site.Params.morelinkstitle }}
-        <h1>{{ .Site.Params.morelinkstitle }}</h1>
       {{- end }}
-        <ul class="list-unstyled list-hanging">
-        {{- range $item := .Site.Params.morelinks }}
-          <li>
-            <a href="{{ index $item "url" }}">
-              {{ index $item "text" }}
-            </a>
-            {{- if index $item "description" }}
-              &ndash; {{ index $item "description" | safeHTML }}
-            {{- end }}
-          </li>
-        {{- end }}
-        </ul>
-      </div>
     </div>
 
-    <hr>
+    <hr class="hidden-sm hidden-xs">
 
     <!-- Row #3: About -->
     <div class="row">
@@ -116,6 +87,11 @@
             <a href="http://www.twitter.com/{{ .Site.Params.twitter }}">
               @{{ .Site.Params.twitter }}
             </a>
+          </li>
+          {{- end }}
+          {{- if .Site.Params.rss }}
+          <li><i class="fa-li fa fa-rss"></i>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
           </li>
           {{- end }}
         </ul>

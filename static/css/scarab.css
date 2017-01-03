@@ -122,6 +122,13 @@ pre code {
   margin-bottom: .75em;
 }
 
+.hanging-no-bullets > ul {
+  list-style-type: none;
+  padding: 0;
+  padding-left: 1.25em;
+	text-indent: -1.25em;
+}
+
 .navbar-default {
   background-color: #3F3250;
   border-color: #3F3250;
