@@ -22,14 +22,14 @@
 
   </div>
 
-  <div class="col-md-{{ .rightcols }}">
+  <div class="col-md-{{ .rightcols }}" >
     {{ if .context.Truncated }}
     <p>
       {{ .context.Summary }}...
       <span style="white-space: nowrap;"><a href="{{ .context.RelPermalink }}">Read more <i class="fa fa-arrow-right"></i></a></span>
     </p>
     {{ else }}
-    <p>
+    <p class="align-top">
       {{ .context.Content }}
     </p>
     {{ end }}

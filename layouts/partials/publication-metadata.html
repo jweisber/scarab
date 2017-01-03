@@ -2,7 +2,8 @@
 
   {{- if isset .Params "venue" }}
   <p>
-    <em>{{ .Params.venue }}</em>
+    <em>{{ .Params.venue }}</em><br />
+    {{ .Params.pubyear }}
   </p>
   {{- end }}
 

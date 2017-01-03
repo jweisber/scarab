@@ -129,6 +129,20 @@ pre code {
 	text-indent: -1.25em;
 }
 
+.align-top {
+  display: inline;
+  vertical-align: text-top;
+}
+
+footer p {
+  font-size: .75em;
+  font-style: italic;
+}
+
+footer a {
+  font-style: normal;
+}
+
 .navbar-default {
   background-color: #3F3250;
   border-color: #3F3250;

@@ -6,9 +6,9 @@
     <!-- Row 1: Content -->
     <div class="row">
 
-      <div class="col-md-8">
-        <h1>Blog</h1>
-        {{- range first 1 ((where .Data.Pages.ByDate "Section" "post").Reverse) }}
+      <div class="col-md-7">
+        <h1>Recent posts</h1>
+        {{- range first 2 ((where .Data.Pages.ByDate "Section" "post").Reverse) }}
           {{ partial "post-summary" (dict "context" . "leftcols" "3" "rightcols" "8") }}
         {{ end }}
         <div class="row">
@@ -18,34 +18,34 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <h1>Research</h1>
-        <ul class="list-unstyled">
-          {{- range first 5 ((where .Data.Pages.ByDate "Section" "publication").Reverse) }}
-          <li>
-            {{- if isset .Params "pdf" }}
-            <a href="{{ .Site.BaseURL }}/pdf/{{ .Params.pdf }}">{{ .Title }}</a>
-            {{- else }}
-            <a href="{{ .Params.puburl }}" target="_blank">{{ .Title }}</a>
+      <div class="col-md-5">
+        <div>
+          <h1>Recent papers</h1>
+          <ul class="list-unstyled">
+            {{- range first 5 ((where .Data.Pages.ByDate "Section" "publication").Reverse) }}
+            <li>
+              {{- if isset .Params "pdf" }}
+              <a href="{{ .Site.BaseURL }}/pdf/{{ .Params.pdf }}">{{ .Title }}</a>
+              {{- else }}
+              <a href="{{ .Params.puburl }}" target="_blank">{{ .Title }}</a>
+              {{- end }}
+              <div><em>{{ .Params.venue }}</em></div>
+            </li>
             {{- end }}
-            <div><em>{{ .Params.venue }}</em></div>
-          </li>
-          {{- end }}
-        </ul>
-        <a href="/publication/" class="more-link">MORE PAPERS &#8811;</a>
+          </ul>
+          <a href="/publication/" class="more-link">MORE PAPERS &#8811;</a>
+        </div>
+
+        <div class="row">
+        {{- range $index, $page := where .Data.Pages "Type" "extras" }}
+        <div class="col-md-12 hanging-no-bullets">
+          <h1>{{ $page.Params.heading | markdownify }}</h1>
+          {{ $page.Content | markdownify }}
+        </div>
+        {{- end }}
+        </div>
       </div>
 
-    </div>
-
-
-    <!-- Row 2: Links -->
-    <div class="row">
-      {{- range $index, $page := where .Data.Pages "Type" "extras" }}
-      <div class="col-md-6 hanging-no-bullets">
-        <h1>{{ $page.Params.heading | markdownify }}</h1>
-        {{ $page.Content | markdownify }}
-      </div>
-      {{- end }}
     </div>
 
     <hr class="hidden-sm hidden-xs">
@@ -60,8 +60,13 @@
         </p>
       </div>
 
-      <div class="col-md-4">
-        <h2>&nbsp;</h2>
+      <div class="col-md-4 col-md-push-4">
+        <img src="{{ .Site.Params.avatar }}" class="img-circle">
+      </div>
+
+      <div class="col-md-4 col-md-pull-4">
+        <h2 class="hidden-sm hidden-xs">&nbsp;</h2>
+        <div class="hidden-lg hidden-md">&nbsp;</div>
         <ul class="fa-ul">
           {{- if .Site.Params.address }}
           <li><i class="fa-li fa fa-university"></i>
@@ -95,10 +100,6 @@
           </li>
           {{- end }}
         </ul>
-      </div>
-
-      <div class="col-md-4">
-        <img src="{{ .Site.Params.avatar }}" class="img-circle">
       </div>
 
     </div>

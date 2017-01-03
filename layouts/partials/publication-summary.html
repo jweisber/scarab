@@ -19,7 +19,7 @@
         <em>{{ partial "publication-metadata" . }}</em>
       </div>
     </div>
-    
+
   </div>
 
   <div class="col-md-7">
@@ -29,7 +29,7 @@
       <span style="white-space: nowrap;"><a href="{{ .RelPermalink }}">Read more <i class="fa fa-arrow-right"></i></a></span>
     </p>
     {{ else }}
-    <p>
+    <p class="align-top">
       {{ .Content }}
     </p>
     {{ end }}
