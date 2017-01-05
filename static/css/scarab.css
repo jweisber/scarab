@@ -1,8 +1,19 @@
-@import url(https://fonts.googleapis.com/css?family=Josefin+Slab|Montserrat|Vollkorn:400,400italic,700);
+@import url(https://fonts.googleapis.com/css?family=Bitter:400,700|Josefin+Slab:400|Montserrat:400|Vollkorn:400,400italic,700);
+/*@import url(https://fonts.googleapis.com/css?family=PT+Serif:700);
+@import url(https://fonts.googleapis.com/css?family=Neuton:400,700);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700);*/
+
+html, body, p, a, li, em, b {
+  font-family: "Vollkorn", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  font-weight: 400;
+}
+
+.row {
+  font-size: 14pt;
+}
 
 .nav a, .navbar-brand {
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -10,29 +21,27 @@ h1, h2, h3, h4  {
   font-family: "Josefin Slab", serif;
 }
 
-h5, h6, p , a, li, blockquote, div {
-  font-family: "Vollkorn", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-  font-weight: 400;
-}
-
-.blog-post > h2, .blog-post > h3 {
-  font-family: "Vollkorn", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-  font-weight: 400;
-  text-transform: none;
+.blog-post > h1, .blog-post > h2, .blog-post > h3, .post-body > h1, .post-body > h2, .post-body > h3 {
+  font-family: "Vollkorn", "Palatino", "Georgia", "Times New Roman", serif;
+  letter-spacing: .03em;
   font-weight: bold;
-  letter-spacing: .025em;
 }
-
-h1.post-title {
-  font-size: 1.8em;
+.blog-post > h1{
+  font-size: xx-large;
+  margin-bottom: .5em;
+}
+.post-body > h1 {
+  font-size: x-large;
+}
+.post-body > h2 {
+  font-size: large;
+}
+.post-body > h3 {
+  font-size: larger;
 }
 
 body {
   padding-top: 70px;
-}
-
-.row {
-  font-size: 14pt;
 }
 
 a {
@@ -47,27 +56,6 @@ img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
-}
-
-h1 {
-  font-size: 1.75em;
-}
-
-h2 {
-  font-size: 1.25em;
-}
-
-h3 {
-  font-size: 1.1em;
-}
-
-h4 {
-  font-size: 1em;
-}
-
-h5, h6 {
-  font-size: 1em;
-  font-weight: bold;
 }
 
 .img-circle {
@@ -104,9 +92,10 @@ code {
   font-size: .8em;
 }
 
-pre code {
-  font-size: 1.25em;
-  font-family: "Inconsolata", Menlo, Courier New, Courier, Mono, monospace;
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: "Inconsolata", Menlo, Monaco, "Courier New", monospace;
+  font-size: 1em;
 }
 
 .post-tags {

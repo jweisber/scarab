@@ -6,9 +6,9 @@
     <!-- Row 1: Content -->
     <div class="row">
 
-      <div class="col-md-7">
+      <div class="col-md-8">
         <h1>Recent posts</h1>
-        {{- range first 2 ((where .Data.Pages.ByDate "Section" "post").Reverse) }}
+        {{- range first 3 ((where .Data.Pages.ByDate "Section" "post").Reverse) }}
           {{ partial "post-summary" (dict "context" . "leftcols" "3" "rightcols" "8") }}
         {{ end }}
         <div class="row">
@@ -18,11 +18,11 @@
         </div>
       </div>
 
-      <div class="col-md-5">
+      <div class="col-md-4">
         <div>
           <h1>Recent papers</h1>
           <ul class="list-unstyled">
-            {{- range first 5 ((where .Data.Pages.ByDate "Section" "publication").Reverse) }}
+            {{- range first 7 ((where .Data.Pages.ByDate "Section" "publication").Reverse) }}
             <li>
               {{- if isset .Params "pdf" }}
               <a href="{{ .Site.BaseURL }}/pdf/{{ .Params.pdf }}">{{ .Title }}</a>
