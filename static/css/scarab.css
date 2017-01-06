@@ -27,17 +27,17 @@ h1, h2, h3, h4  {
   font-weight: bold;
 }
 .blog-post > h1{
-  font-size: xx-large;
+  font-size: 3rem;
   margin-bottom: .5em;
 }
 .post-body > h1 {
-  font-size: x-large;
+  font-size: 2.5rem;
 }
 .post-body > h2 {
-  font-size: large;
+  font-size: 2.2rem;
 }
 .post-body > h3 {
-  font-size: larger;
+  font-size: 2rem;
 }
 
 body {
@@ -95,7 +95,7 @@ code {
 code[class*="language-"],
 pre[class*="language-"] {
   font-family: "Inconsolata", Menlo, Monaco, "Courier New", monospace;
-  font-size: 1em;
+  font-size: .9em;
 }
 
 .post-tags {
