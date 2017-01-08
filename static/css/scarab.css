@@ -132,6 +132,13 @@ footer a {
   font-style: normal;
 }
 
+.footnote-return sup {
+  display: none;
+}
+.footnote-return:after {
+  content: '↩';
+}
+
 .navbar-default {
   background-color: #3F3250;
   border-color: #3F3250;
