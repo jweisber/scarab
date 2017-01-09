@@ -25,7 +25,7 @@
             {{- range first 7 ((where .Data.Pages.ByDate "Section" "publication").Reverse) }}
             <li>
               {{- if isset .Params "pdf" }}
-              <a href="{{ .Site.BaseURL }}/pdf/{{ .Params.pdf }}">{{ .Title }}</a>
+              <a href="{{ .Site.BaseURL }}pdf/{{ .Params.pdf }}">{{ .Title }}</a>
               {{- else }}
               <a href="{{ .Params.puburl }}" target="_blank">{{ .Title }}</a>
               {{- end }}
