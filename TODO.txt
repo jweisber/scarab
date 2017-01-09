@@ -1,4 +1,1 @@
-- Statcounter
 - Add prism optionality
-- Add MathJax optionality
-- Display coauthors
