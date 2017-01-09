@@ -1,10 +1,24 @@
 <div class="post-metadata">
 
+  {{- if .Params.coauthors }}
+  <div>
+  with
+    {{- range .Params.coauthors }}
+    <a href="{{ .url }}">{{ .name }}</a>
+    {{- end }}
+  </div>
+  {{- end }}
+
   {{- if isset .Params "venue" }}
-  <p>
-    <em>{{ .Params.venue }}</em><br />
+  <div>
+    <em>{{ .Params.venue }}</em>
+  </div>
+  {{- end }}
+
+  {{- if .Params.pubyear }}
+  <div>
     {{ .Params.pubyear }}
-  </p>
+  </div>
   {{- end }}
 
   {{ if isset $.Params "tags" }}

@@ -9,6 +9,14 @@
 
         <h1 class="publication-title">{{ .Title }}</h1>
 
+        {{- if .Params.coauthors }}
+        <p> with
+          {{- range .Params.coauthors }}
+          <a href="{{ .url }}">{{ .name }}</a>
+          {{- end }}
+        </p>
+        {{- end }}
+
         {{- if and (isset .Params "venue") (isset .Params "pubyear") }}
         <p>
           <em>{{ .Params.venue }}</em>, {{ .Params.pubyear }}{{- if (isset .Params "issue") }}, {{ .Params.issue }} {{- end }}
