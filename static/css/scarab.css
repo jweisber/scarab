@@ -139,6 +139,58 @@ footer a {
   content: '↩';
 }
 
+
+/* AMS Math-like environments */
+/* Courtesy of Z. T. Harmany: http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/ */
+
+.theorem {
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+}
+.theorem:before {
+    content: "Theorem.";
+    font-weight: bold;
+    font-style: normal;
+}
+.lemma {
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+}
+.lemma:before {
+    content: "Lemma.";
+    font-weight: bold;
+    font-style: normal;
+}
+.proof {
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+}
+.proof:before {
+    content: "Proof.";
+    font-style: italic;
+}
+.proof:after {
+    content: "\25FB";
+    float:right;
+}
+.definition {
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+}
+.definition:before {
+    content: "Definition.";
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+/* Navbar Colouring */
+
 .navbar-default {
   background-color: #3F3250;
   border-color: #3F3250;

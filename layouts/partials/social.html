@@ -1,0 +1,21 @@
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@{{ .Site.Params.twitter }}">
+    <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ .Summary | safeHTML }}">
+    {{- if .Params.previewImage }}
+    <meta name="twitter:image" content="{{ .Params.previewImage }}">
+    {{- else if .Site.Params.avatar }}
+    <meta name="twitter:image" content="{{ .Site.Params.avatar }}">
+    {{- end }}
+
+    <meta property="og:url" content="{{ .Site.Params.BaseURL }}{{ .URL }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:description" content="{{ .Summary }}" />
+    {{- if .Params.previewImage }}
+    <meta property="og:image" content="{{ .Params.previewImage }}" />
+    {{- else if .Site.Params.avatar }}
+    <meta property="og:image" content="{{ .Site.Params.avatar }}" />
+    {{- end }}
