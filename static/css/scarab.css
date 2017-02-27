@@ -140,6 +140,30 @@ footer a {
 }
 
 
+
+/* Pagination */
+
+nav > ul.pagination > li > a {
+  color: red;
+  background: white;
+  border-color: red !important;
+  font-style: italic;
+}
+
+nav > ul.pagination > li > a:hover {
+  color: red;
+  background: #FFEFEF;
+  text-decoration: underline;
+}
+
+nav > ul.pagination > li.active > a {
+  color: white;
+  background: red !important;
+  background-color: red !important;
+}
+
+
+
 /* AMS Math-like environments */
 /* Courtesy of Z. T. Harmany: http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/ */
 
@@ -186,8 +210,6 @@ footer a {
     font-weight: bold;
     font-style: normal;
 }
-
-
 
 /* Navbar Colouring */
 
@@ -245,7 +267,6 @@ footer a {
 .navbar-default .navbar-link:hover {
   color: #CAEBF2;
 }
-
 
 
 /*

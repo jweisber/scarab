@@ -22,11 +22,15 @@
       </div>
       <div class="col-md-10 col-md-offset-1">
 
-        {{- range first 10 .Data.Pages }}
+        {{- range .Paginator.Pages }}
         <div class="section-item">
           <a href="{{ .Permalink }}">{{ partial "post-summary" (dict "context" . "leftcols" "4" "rightcols" "7") }}</a>
         </div>
         {{- end }}
+
+        <div class="text-center">
+          {{ partial "pagination.html" . }}
+        </div>
 
         <div>
           {{ partial "back-link" }}
