@@ -24,11 +24,13 @@
           <ul class="list-unstyled">
             {{- range first 7 ((where .Data.Pages.ByDate "Section" "publication").Reverse) }}
             <li>
+              <span class="pub-link">
               {{- if isset .Params "pdf" }}
               <a href="{{ .Site.BaseURL }}pdf/{{ .Params.pdf }}">{{ .Title }}</a>
               {{- else }}
               <a href="{{ .Params.puburl }}" target="_blank">{{ .Title }}</a>
               {{- end }}
+              </span>
               <div><em>{{ .Params.venue }}</em></div>
             </li>
             {{- end }}
