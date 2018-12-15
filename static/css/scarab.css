@@ -1,55 +1,75 @@
-@import url(https://fonts.googleapis.com/css?family=Bitter:400,700|Josefin+Slab:400|Montserrat:400|Vollkorn:400,400italic,700);
-/*@import url(https://fonts.googleapis.com/css?family=PT+Serif:700);
-@import url(https://fonts.googleapis.com/css?family=Neuton:400,700);
-@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700);*/
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400|Alegreya:400,400i,700|Ubuntu:500);
 
-html, body, p, a, li, em, b {
-  font-family: "Vollkorn", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-  font-weight: 400;
-}
-
-.row {
-  font-size: 14pt;
-}
-
-.nav a, .navbar-brand {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-}
-
-h1, h2, h3, h4  {
-  font-family: "Josefin Slab", serif;
-}
-
-.blog-post > h1, .blog-post > h2, .blog-post > h3, .post-body > h1, .post-body > h2, .post-body > h3 {
-  font-family: "Vollkorn", "Palatino", "Georgia", "Times New Roman", serif;
-  letter-spacing: .03em;
-  font-weight: bold;
-}
-.blog-post > h1{
-  font-size: 3rem;
-  margin-bottom: .5em;
-}
-.post-body > h1 {
-  font-size: 2.5rem;
-}
-.post-body > h2 {
-  font-size: 2.2rem;
-}
-.post-body > h3 {
-  font-size: 2rem;
-}
+/* 
+  COLOR SCHEME
+  ------------
+  background: #f8f8f8
+  text: #040F0F
+  headings: #D62839
+  navbar: #3F3250
+  links: #f25757
+  hover: #4C6085
+*/
 
 body {
   padding-top: 70px;
+  background: #f8f8f8;
+  color: #040F0F;
+  font-family: "Alegreya", "Hoefler Text", Times, serif;
+  font-weight: 400;
+  font-size: 14pt;
 }
 
 a {
-  color: #E14658;
+  color: #f25757;
+}
+a:hover {
+  color: #4C6085;
+  text-decoration: none;
+}
+.pub-link a {
+  font-weight: bold;
+}
+.blog-post a {
+  color: #040F0F;
+  border-bottom: 1px dotted #4C6085;
+}
+.blog-post a:hover {
+  color: #4C6085;
+}
+.post-back-link a {
+  color: #f25757;
+  border-bottom: none;
 }
 
-a:hover {
-  color: #E14658;
+h1, h2, h3, h4  {
+  font-weight: bold;  
+  letter-spacing: .01em;
+}
+.area-header {
+  font-family: "Josefin Slab", serif;
+  font-weight: normal;  
+  letter-spacing: 0rem;
+}
+
+.blog-post h1, h2, h3 {
+  color: #D62839;
+}
+.blog-post h1 {
+  font-size: 2.5rem;
+}
+.blog-post h2 {
+  font-size: 2.2rem;
+}
+.post-body h3 {
+  font-size: 2rem;
+}
+h1.post-title {
+  font-size: 3rem;
+  margin-bottom: .9em;
+}
+div.post-metadata {
+  margin-bottom: 2.5rem;
 }
 
 img {
@@ -82,7 +102,7 @@ img {
   letter-spacing: 1px;
 }
 
-.epitaph {
+.epigraph {
   margin-top: 1em;
   font-style: italic;
   padding-bottom: 1.35em;
@@ -144,22 +164,22 @@ footer a {
 /* Pagination */
 
 nav > ul.pagination > li > a {
-  color: red;
-  background: white;
-  border-color: red !important;
+  color: #f25757;
+  background: #f8f8f8;
+  border-color: #f25757 !important;
   font-style: italic;
 }
 
 nav > ul.pagination > li > a:hover {
-  color: red;
-  background: #FFEFEF;
-  text-decoration: underline;
+  color: #f25757;
+  background: #f0f0f0;
+  text-decoration: none;
 }
 
 nav > ul.pagination > li.active > a {
-  color: white;
-  background: red !important;
-  background-color: red !important;
+  color: #f8f8f8;
+  background: #f25757 !important;
+  background-color: #f25757 !important;
 }
 
 
@@ -211,40 +231,48 @@ nav > ul.pagination > li.active > a {
     font-style: normal;
 }
 
-/* Navbar Colouring */
-
+/* Navbar */
+.navbar {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  font-size: 15pt;
+  border-color: transparent;
+}
+.navbar ul {
+  font-size: 11pt;
+}
 .navbar-default {
   background-color: #3F3250;
   border-color: #3F3250;
 }
 .navbar-default .navbar-brand {
-  color: #ffffff;
+  color: #f8f8f8;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #CAEBF2;
+  color: #dbd1e7;
 }
 .navbar-default .navbar-text {
-  color: #ffffff;
+  color: #f8f8f8;
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: #ffffff;
+  color: #f8f8f8;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #CAEBF2;
+  color: #dbd1e7;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #CAEBF2;
+  color: #dbd1e7;
   background-color: #414141;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #CAEBF2;
+  color: #dbd1e7;
   background-color: #414141;
 }
 .navbar-default .navbar-toggle {
@@ -255,17 +283,17 @@ nav > ul.pagination > li.active > a {
   background-color: #414141;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
+  background-color: #f8f8f8;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #ffffff;
+  border-color: #f8f8f8;
 }
 .navbar-default .navbar-link {
-  color: #ffffff;
+  color: #f8f8f8;
 }
 .navbar-default .navbar-link:hover {
-  color: #CAEBF2;
+  color: #dbd1e7;
 }
 
 

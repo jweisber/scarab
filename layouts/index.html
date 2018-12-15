@@ -7,7 +7,7 @@
     <div class="row">
 
       <div class="col-md-8">
-        <h1>Recent posts</h1>
+        <h1 class="area-header">Recent posts</h1>
         {{- range first 3 ((where .Data.Pages.ByDate "Section" "post").Reverse) }}
           {{ partial "post-summary" (dict "context" . "leftcols" "3" "rightcols" "8") }}
         {{ end }}
@@ -20,7 +20,7 @@
 
       <div class="col-md-4">
         <div>
-          <h1>Recent papers</h1>
+          <h1 class="area-header">Recent papers</h1>
           <ul class="list-unstyled">
             {{- range first 7 ((where .Data.Pages.ByDate "Section" "publication").Reverse) }}
             <li>
@@ -41,7 +41,7 @@
         <div class="row">
         {{- range $index, $page := where .Data.Pages "Type" "extras" }}
         <div class="col-md-12 hanging-no-bullets">
-          <h1>{{ $page.Params.heading | markdownify }}</h1>
+          <h1 class="area-header">{{ $page.Params.heading | markdownify }}</h1>
           {{ $page.Content | markdownify }}
         </div>
         {{- end }}
@@ -56,7 +56,7 @@
     <div class="row">
 
       <div class="col-md-4">
-        <h1>About</h1>
+        <h1 class="area-header">About</h1>
         <p>
           {{ .Site.Params.about }}
         </p>

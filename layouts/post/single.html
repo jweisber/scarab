@@ -1,13 +1,12 @@
 {{ partial "header.html" . }}
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container blog-post">
 
     <!-- Row -->
     <div class="row">
       <div class="col-md-3 hidden-sm hidden-xs text-right">
         <h1 class="post-title">&nbsp;</h1>
-        <p>
           <em>{{ .Date.Format "Jan 2, 2006" }}</em><br />
           {{ if isset $.Params "tags" }}
           {{ $tagsLen := len $.Params.tags }}
@@ -23,11 +22,9 @@
         </p>
       </div>
 
-      <div class="col-md-7 blog-post">
-
-        <h1>{{ .Title }}</h1>
-
-        <div class="hidden-md hidden-lg">
+      <div class="col-md-7">
+        <h1 class="post-title">{{ .Title }}</h1>
+        <div class="hidden-md hidden-lg post-metadata">
           <div>
             <em>{{ .Date.Format "Jan 2, 2006" }}</em>
           </div>
