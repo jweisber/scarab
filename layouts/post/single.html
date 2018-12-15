@@ -8,7 +8,7 @@
       <div class="col-md-3 hidden-sm hidden-xs text-right">
         <h1 class="post-title">&nbsp;</h1>
         <p>
-          <em>{{ .Date.Format "Mon, Jan 2, 2006" }}</em><br />
+          <em>{{ .Date.Format "Jan 2, 2006" }}</em><br />
           {{ if isset $.Params "tags" }}
           {{ $tagsLen := len $.Params.tags }}
           {{ if gt $tagsLen 0 }}
@@ -29,7 +29,7 @@
 
         <div class="hidden-md hidden-lg">
           <div>
-            <em>{{ .Date.Format "Mon, Jan 2, 2006" }}</em>
+            <em>{{ .Date.Format "Jan 2, 2006" }}</em>
           </div>
           {{ if isset $.Params "tags" }}
           {{ $tagsLen := len $.Params.tags }}
